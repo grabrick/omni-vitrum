@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+
+  @media screen and (max-width: 1300px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 965px) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 812px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 565px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  .wrapper {
+
+    .title {
+      color: #817E7E;
+    }
+
+    .sector {
+      font-size: 20px;
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sectorSocial {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+
+      .text {
+        font-size: 18px;
+      }
+    }
+  }
+}

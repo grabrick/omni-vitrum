@@ -1,0 +1,11 @@
+@import '../../../../styles/const.scss';
+
+.videoPlayer {
+  width: 100%;
+  max-width: 1216px;
+  background-color: $Dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}

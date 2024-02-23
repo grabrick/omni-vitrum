@@ -1,0 +1,106 @@
+import { FC } from "react";
+import m from "./Products.module.scss";
+import Section from "../shared/Section/Section";
+import Template from "../shared/Template/Template";
+import MediaPlayer from "../shared/MediaPlayer/MediaPlayer";
+
+import Vid from "@/assets/video/back.webm";
+import ImageSlider from "../shared/ImageSlider/ImageSlider";
+import TopDownSlider from "../shared/TopDownSlider/TopDownSlider";
+import { motion } from "framer-motion";
+import { topToBottom } from "@/assets/animation/animation";
+import ErrorWrapper from "../ErrorWrapper/ErrorWrapper";
+import { TProps } from "./type/type";
+
+const Products: FC<TProps> = ({ query }) => {
+  return (
+    <>
+      {query && (
+        <>
+          <Section title={query?.routeTitle} />
+          <Template>
+            <div className={m.conteiner}>
+              <MediaPlayer src={Vid} defaultVolume={0.5} />
+              <div className={m.wrapper}>
+                <motion.div
+                  className={m.slider}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={2}
+                  variants={topToBottom}
+                >
+                  <ImageSlider images={query.content.images} />
+                </motion.div>
+                <motion.div
+                  className={m.topDownSlider}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={2}
+                  variants={topToBottom}
+                >
+                  <TopDownSlider findCurrentProduct={query.content.images} />
+                </motion.div>
+                <motion.div className={m.textWrapper}>
+                  {query.content.texts.map((el) => (
+                    <div className={m.wrapp} key={el.id}>
+                      {el.text && (
+                        <motion.p
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                          className={m.text}
+                          custom={el.animatedId}
+                          variants={topToBottom}
+                        >
+                          {el.text}
+                        </motion.p>
+                      )}
+                      {el.other && (
+                        <motion.span
+                          style={{ textAlign: "center", fontSize: '18px', fontWeight: "600" }}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                          custom={el.animatedId}
+                          variants={topToBottom}
+                        >
+                          {el.other}
+                        </motion.span>
+                      )}
+                      {el.subText !== null && (
+                        <motion.div
+                          className={m.subTextWrapper}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                          custom={el.animatedId}
+                          variants={topToBottom}
+                        >
+                          {el.subText.map((sub) => (
+                            <span className={m.span} key={sub.id}>
+                              {sub.text}
+                            </span>
+                          ))}
+                        </motion.div>
+                      )}
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
+          </Template>
+        </>
+      )}
+      {!query && (
+        <ErrorWrapper
+          errorMessage={"В данный момент продукция отсутствует"}
+          backRoute={"/"}
+        />
+      )}
+    </>
+  );
+};
+
+export default Products;

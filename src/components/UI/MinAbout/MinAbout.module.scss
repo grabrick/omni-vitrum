@@ -1,0 +1,36 @@
+@import '../../../styles/const.scss';
+
+.content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 425px) {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 26px;
+    letter-spacing: 2px;
+    font-weight: 600;
+
+    @media screen and (max-width: 425px) {
+      font-size: 22px;
+    }
+  }
+
+  .main {
+    display: flex;
+    gap: 55px;
+    padding-top: 50px;
+
+    @media screen and (max-width: 900px) {
+      gap: 25px;
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+}

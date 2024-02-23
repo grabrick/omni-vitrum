@@ -1,0 +1,35 @@
+{
+  "name": "omni-vitrum",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@pbe/react-yandex-maps": "^1.2.5",
+    "@react-three/drei": "^9.99.0",
+    "@react-three/fiber": "^8.15.16",
+    "@types/three": "^0.161.2",
+    "axios": "^1.6.7",
+    "framer-motion": "^11.0.5",
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
+    "sass": "^1.70.0",
+    "three": "^0.161.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "file-loader": "^6.2.0",
+    "typescript": "^5",
+    "url-loader": "^4.1.1"
+  }
+}

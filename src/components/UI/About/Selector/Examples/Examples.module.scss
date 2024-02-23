@@ -1,0 +1,170 @@
+@import '../../../../../styles/const.scss';
+
+.routerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  .routeTitle {
+    color: $White;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .slider {
+    display: none;
+    justify-content: center;
+    width: 100%;
+
+    @media screen and (max-width: 800px) {
+      display: flex;
+    }
+  }
+
+  .routerWrapper {
+    background-color: $BlueDark2;
+    box-shadow: 0px 5px 20px $ShadowColor;
+    width: 100%;
+    padding: 0 5px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+
+    .route {
+      cursor: pointer;
+      padding: 15px;
+
+      @media screen and (max-width: 856px) {
+        padding: 10px;
+      }
+
+      .routeText {
+        color: $White;
+        font-size: 20px;
+        letter-spacing: 2px;
+        font-weight: 500;
+
+        @media screen and (max-width: 1070px) {
+          font-size: 16px;
+          letter-spacing: 0px;
+        }
+      }
+    }
+
+    .activeRoute {
+      background-color: $Border;
+      border-top: 3px solid $BlueLight1;
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+
+      @media screen and (max-width: 856px) {
+        padding: 5px;
+      }
+
+      .routeText {
+        color: $White;
+        font-size: 20px;
+        letter-spacing: 2px;
+        font-weight: 500;
+
+        @media screen and (max-width: 1070px) {
+          font-size: 16px;
+          letter-spacing: 0px;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+
+    .element {
+      display: flex;
+      gap: 30px;
+
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+      }
+
+      .images {
+        background-color: #161F3F;
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        border-radius: 30px;
+
+        @media screen and (max-width: 950px) {
+          padding: 10px;
+        }
+
+        @media screen and (max-width: 800px) {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .imageWrapper {
+          padding: 10px;
+          background-color: $Border;
+          border-radius: 30px;
+          cursor: pointer;
+          width: fit-content;
+
+          @media screen and (max-width: 950px) {
+            padding: 5px;
+          }
+
+          @media screen and (max-width: 768px) {
+            width: 100%;
+          }
+
+          .img {
+            border-radius: 30px;
+            width: 311px;
+            height: 200px;
+
+            @media screen and (max-width: 860px) {
+              width: 250px;
+              height: 150px;
+            }
+
+            @media screen and (max-width: 768px) {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .texts {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .text {
+          color: $White;
+          font-size: 18px;
+          letter-spacing: 2px;
+          font-weight: 400;
+
+          @media screen and (max-width: 860px) {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

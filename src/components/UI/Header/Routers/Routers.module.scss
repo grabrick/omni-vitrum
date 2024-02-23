@@ -1,0 +1,62 @@
+@import '../../../../styles/const.scss';
+
+.container {
+  display: flex;
+  height: 30px;
+  justify-content: space-between;
+  width: 53%;
+  // gap: 30px;
+
+  @media screen and (max-width: 950px) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 840px) {
+    display: none;
+  }
+
+  .link {
+    font-size: 15px;
+    font-weight: 500;
+
+    &:hover {
+      font-weight: 600;
+      transition: ease-in .3s;
+      color: #787878;
+    }
+  }
+
+  .linkActive {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .wrappActive {
+    color: #787878;
+    border-bottom: 2px solid #88A2FF;
+  }
+
+  .selector {
+    display: flex;
+    cursor: pointer;
+    padding: 0 0 40px 0;
+    font-weight: 500;
+
+    .selectorTitle {
+      font-size: 15px;
+    }
+  }
+
+  .selecrtorActive {
+    display: flex;
+    cursor: pointer;
+    padding: 0 0 40px 0;
+    font-weight: 600;
+    transition: ease-in .3s;
+    color: #787878;
+
+    .selectorTitle {
+      font-size: 15px;
+    }
+  }
+}

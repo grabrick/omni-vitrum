@@ -1,0 +1,28 @@
+@import '../../../../styles/const.scss';
+
+.container {
+  width: 100%;
+  max-width: 1275px;
+  padding-bottom: 30px;
+
+  .wrapper {
+    width: fit-content;
+    border-bottom: 3px solid $OpacityGray;
+    padding-bottom: 10px;
+
+    .title {
+      font-size: 30px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: $Gray;
+
+      @media screen and (max-width: 600px) {
+        font-size: 30px;
+      }
+
+      @media screen and (max-width: 480px) {
+        font-size: 25px;
+      }
+    }
+  }
+}

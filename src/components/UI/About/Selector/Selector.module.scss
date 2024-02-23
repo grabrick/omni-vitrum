@@ -1,0 +1,74 @@
+@import '../../../../styles/const.scss';
+
+.selector {
+  width: 100%;
+  background-color: $BlueLight2;
+  border-radius: 15px;
+  padding: 15px 45px;
+  box-shadow: 0px 15px 20px $ShadowColor;
+
+  @media screen and (max-width: 480px) {
+    padding: 10px 25px;
+  }
+
+  .isOpened {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    .card {
+      background-color: $BlueDark2;
+      padding: 25px;
+      border-radius: 30px;
+      border-left: 2px solid $Border;
+      border-right: 2px solid $Border;
+      box-shadow: 0px 10px 20px $ShadowColor;
+
+      .textTitle {
+        font-size: 18px;
+        font-weight: 500;
+        color: $White;
+        padding-bottom: 20px;
+        border-bottom: 2px solid $Border;
+
+        @media screen and (max-width: 425px) {
+          font-size: 16px;
+        }
+      }
+
+      .textTitleEmpty {
+        font-size: 18px;
+        font-weight: 500;
+        color: $White;
+
+        @media screen and (max-width: 425px) {
+          font-size: 14px;
+        }
+      }
+
+      .otherText {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 40px;
+
+        .text {
+          font-size: 18px;
+          font-weight: 400;
+          color: $White;
+
+          @media screen and (max-width: 425px) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .other {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 400;
+      color: $White;
+    }
+  }
+}

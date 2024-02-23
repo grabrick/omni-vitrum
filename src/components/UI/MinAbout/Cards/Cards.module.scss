@@ -1,0 +1,109 @@
+@import '../../../../styles/const.scss';
+
+.container {
+  background-color: #161F3F;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 470px;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 425px;
+  }
+
+  @media screen and (max-width: 900px) {
+    max-width: 300px;
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: fit-content;
+  }
+
+  .cards {
+    background-color: #AFC1FF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    width: max-content;
+    max-width: 428px;
+    gap: 35px;
+    cursor: pointer;
+
+    @media screen and (max-width: 1024px) {
+      max-width: 385px;
+    }
+
+    @media screen and (max-width: 900px) {
+      max-width: 260px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $BlueLight2;
+        transform: scale(1.02);
+        transition: ease-in .3s;
+        box-shadow: 0 5px 10px $BlueLight2;
+      }
+    }
+
+    @media (hover: none) {
+      &:active {
+        background-color: $BlueLight2;
+        transform: scale(1.02);
+        transition: ease-in .3s;
+        box-shadow: 0 5px 10px $BlueLight2;
+      }
+    }
+
+    // &:hover {
+    //   background-color: $BlueLight2;
+    //   transform: scale(1.02);
+    //   transition: ease-in .3s;
+    //   box-shadow: 0 5px 10px $BlueLight2;
+    // }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      @media screen and (max-width: 900px) {
+        gap: 10px;
+      }
+
+      .title {
+        color: $White;
+        letter-spacing: 2px;
+        font-size: 21px;
+        font-weight: 600;
+
+        @media screen and (max-width: 900px) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .text {
+      letter-spacing: 2px;
+      font-size: 19px;
+      font-weight: 400;
+
+      @media screen and (max-width: 900px) {
+        font-size: 16px;
+      }
+    }
+  }
+}

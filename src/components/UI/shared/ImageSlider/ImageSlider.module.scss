@@ -1,0 +1,88 @@
+@import '../../../../styles/const.scss';
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $BlueDark2;
+  max-width: 1152px;
+  padding: 20px;
+  border-radius: 30px;
+
+  @media screen and (max-width: 1235px) {
+ 
+  }
+
+  .sliderImages {
+    display: flex;
+    overflow-x: auto;
+    overscroll-behavior: contain;
+    scroll-snap-type: x mandatory;
+    max-width: 1034px;
+    gap: 25px;
+    padding-bottom: 20px;
+
+    @media screen and (max-width: 1235px) {
+      max-width: 684px;
+    }
+
+    @media screen and (max-width: 880px) {
+      max-width: 425px;
+    }
+
+    @media screen and (max-width: 610px) {
+      max-width: 190px;
+    }
+
+    @media screen and (max-width: 425px) {
+      max-width: 250px;
+    }
+
+    &::-webkit-scrollbar {
+      height: 10px;
+      background-color: $BlueLight1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $Border;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background-color: $BlueLight1;
+      border-radius: 5px;
+    }
+
+    .imageWrapper {
+      background-color: $Border;
+      padding: 10px;
+      border-radius: 30px;
+      list-style: none;
+      scroll-snap-align: start;
+      max-width: 328px;
+      max-height: 224px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (max-width: 610px) {
+        padding: 5px;
+      }
+
+      .img {
+        flex: 0 0 auto;
+        max-width: 312px;
+        height: 208px;
+        border-radius: 30px;
+
+        @media screen and (max-width: 880px) {
+          max-width: 180px;
+          height: 150px;
+        }
+
+        @media screen and (max-width: 425px) {
+          max-width: 240px;
+        }
+      }
+    }
+  }
+}

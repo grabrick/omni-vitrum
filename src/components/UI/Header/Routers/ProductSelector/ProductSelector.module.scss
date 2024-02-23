@@ -1,0 +1,71 @@
+@import '../../../../../styles/const.scss';
+
+.select {
+  position: absolute;
+  top: 45px;
+  // right: -112px;
+  right: -150px;
+  width: max-content;
+  max-width: 800px;
+  background-color: $OpacityBlueDark;
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid $Border;
+    padding-bottom: 30px;
+    gap: 20px;
+
+    &:nth-child(2) {
+      border: none;
+      padding: 0px;
+    }
+
+    .title {
+      color: $WhiteGray;
+      font-size: 20px;
+      font-weight: 500;
+
+      @media screen and (max-width: 1256px) {
+        font-size: 18px;
+      }
+    }
+
+    .titleActive {
+      color: $White;
+      font-size: 20px;
+      font-weight: 500;
+      transition: ease-in .2s;
+
+      @media screen and (max-width: 1256px) {
+        font-size: 18px;
+      }
+    }
+
+    .listWrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+
+      .link {
+        color: $WhiteGray;
+        text-align: start;
+      }
+
+      .notLink {
+        color: $White;
+        font-weight: 600;
+
+        &:hover {
+          color: $WhiteGray;
+          transition: ease-in .2s;
+        }
+      }
+    }
+  }
+}

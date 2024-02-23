@@ -1,0 +1,78 @@
+@import '../../../styles/const.scss';
+
+.conteiner {
+  width: 100%;
+  max-width: 1275px;
+  // padding: 30px 60px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media screen and (max-width: 425px) {
+    padding: 30px 10px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1275px;
+    gap: 40px;
+
+    .slider {
+      @media screen and (max-width: 880px) {
+        display: none;
+      }
+    }
+    .topDownSlider {
+      display: flex;
+      justify-content: center;
+
+      @media screen and (min-width: 880px) {
+        display: none;
+      }
+    }
+    .textWrapper {
+      display: flex;
+      flex-direction: column;
+      max-width: 1074px;
+      gap: 20px;
+
+      .wrapp {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .text {
+
+          @media screen and (max-width: 425px) {
+            text-align: center;
+          }
+        }
+
+        .subTextWrapper {
+          background-color: $BlueDark2;
+          border-left: 3px solid $Border;
+          border-right: 3px solid $Border;
+          box-shadow: 0px 15px 20px $ShadowColor;
+          margin-bottom: 20px;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          border-radius: 20px;
+
+          .span {
+            color: $White;
+            font-size: 17px;
+
+            @media screen and (max-width: 425px) {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

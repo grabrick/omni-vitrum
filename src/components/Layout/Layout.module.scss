@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .wrapper {
+    flex: 1 1 auto;
+    background-image: url('../../assets/images/bg.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .main {
+    // max-width: 1275px;
+    // margin: 0 auto;
+    padding-top: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

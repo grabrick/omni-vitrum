@@ -1,0 +1,163 @@
+@import '../../../../styles/const.scss';
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @media screen and (max-width: 425px) {
+    gap: 30px;
+  }
+
+  .card {
+    display: flex;
+    gap: 35px;
+
+    @media screen and (max-width: 970px) {
+      flex-direction: column-reverse;
+      background-color: $BlueDark2;
+      border-radius: 30px;
+      padding: 10px;
+      align-items: center;
+
+      &:nth-child(2) {
+        flex-direction: column;
+      }
+    }
+
+    .imageWrapper {
+      background-color: $BlueDark2;
+      width: 100%;
+      max-width: 527px;
+      height: 351px;
+      padding: 10px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (max-width: 1075px) {
+        max-width: 435px;
+        height: 260px;
+      }
+
+      @media screen and (max-width: 970px) {
+        padding: 10px;
+        background-color: $Border;
+      }
+
+      @media screen and (max-width: 580px) {
+        max-width: 340px;
+        height: 180px;
+      }
+
+      @media screen and (max-width: 500px) {
+        display: none;
+      }
+
+      .img {
+        max-width: 507px;
+        height: 331px;
+        border-radius: 30px;
+
+        @media screen and (max-width: 1075px) {
+          max-width: 415px;
+          height: 240px;
+        }
+
+        @media screen and (max-width: 580px) {
+          max-width: 340px;
+          height: 180px;
+        }
+
+        @media screen and (max-width: 500px) {
+          display: none;
+        }
+      }
+    }
+
+    .textWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      .textHeader {
+        @media screen and (max-width: 970px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .title {
+          font-size: 30px;
+          font-weight: 500;
+
+          @media screen and (max-width: 1075px) {
+            font-size: 22px;
+          }
+
+          @media screen and (max-width: 970px) {
+            font-size: 30px;
+            color: $White;
+          }
+
+          @media screen and (max-width: 707px) {
+            text-align: center;
+          }
+
+          @media screen and (max-width: 425px) {
+            font-size: 20px;
+          }
+        }
+
+        .label {
+          font-size: 15px;
+          font-weight: 400;
+
+          @media screen and (max-width: 1075px) {
+            font-size: 13px;
+          }
+
+          @media screen and (max-width: 970px) {
+            color: $White;
+          }
+        }
+      }
+
+      .text {
+        color: $Gray;
+        font-size: 18px;
+        letter-spacing: 2px;
+
+        @media screen and (max-width: 1075px) {
+          font-size: 16px;
+        }
+
+        @media screen and (max-width: 970px) {
+          color: $White;
+        }
+
+        @media screen and (max-width: 425px) {
+          letter-spacing: 0px;
+        }
+      }
+
+      .link {
+        color: $BlueDark2;
+        font-size: 18px;
+        font-weight: 500;
+
+        @media screen and (max-width: 970px) {
+          color: $White;
+          text-align: center;
+        }
+
+        &:hover {
+          transition: ease-in .3s;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
