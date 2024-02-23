@@ -3,12 +3,14 @@ import m from './Section.module.scss';
 import { bottomToTop } from '@/assets/animation/animation';
 
 type TProps = {
-  title: string | undefined
+  title: string | undefined,
+  pathname?: string
 }
 
-const Section = ({ title }: TProps) => {
+const Section = ({ title, pathname }: TProps) => {
   return (
     <motion.div 
+      key={pathname}
       className={m.container}
       initial="hidden"
       whileInView="visible"

@@ -20,7 +20,7 @@ const Footer = () => {
       title: "Соц.Сети",
       selectors: [
         { id: 0, text: "WhatsApp", link: '' },
-        { id: 1, text: "Instagram", link: '' },
+        { id: 1, text: "Telegram", link: '' },
       ],
     },
   ];

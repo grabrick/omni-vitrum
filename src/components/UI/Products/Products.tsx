@@ -17,8 +17,8 @@ const Products: FC<TProps> = ({ query }) => {
     <>
       {query && (
         <>
-          <Section title={query?.routeTitle} />
-          <Template>
+          <Section pathname={query.type} title={query?.routeTitle} />
+          <Template key={query.type}>
             <div className={m.conteiner}>
               <MediaPlayer src={Vid} defaultVolume={0.5} />
               <div className={m.wrapper}>
@@ -30,7 +30,7 @@ const Products: FC<TProps> = ({ query }) => {
                   custom={2}
                   variants={topToBottom}
                 >
-                  <ImageSlider images={query.content.images} />
+                  {/* <ImageSlider images={query.content.images} /> */}
                 </motion.div>
                 <motion.div
                   className={m.topDownSlider}
@@ -40,7 +40,7 @@ const Products: FC<TProps> = ({ query }) => {
                   custom={2}
                   variants={topToBottom}
                 >
-                  <TopDownSlider findCurrentProduct={query.content.images} />
+                  {/* <TopDownSlider findCurrentProduct={query.content.images} /> */}
                 </motion.div>
                 <motion.div className={m.textWrapper}>
                   {query.content.texts.map((el) => (

@@ -3,7 +3,7 @@ import media from "@/assets/images/topography_wallpaper.jpg";
 const minProducts = [
   {
     id: 0,
-    title: "Изделия из стекла",
+    title: "Гнутое стекло",
     label: "Производство и обработка",
     image: media,
     linkRouter: "/",
@@ -12,7 +12,7 @@ const minProducts = [
   },
   {
     id: 1,
-    title: "Изготовление гнутого триплекса",
+    title: "Гнутый триплекс",
     label: "Бронированные стекла для авто",
     image: media,
     linkRouter: "/",
@@ -21,7 +21,7 @@ const minProducts = [
   },
   {
     id: 2,
-    title: "Стеклянные витрины",
+    title: "Сферическое стекло",
     label: "Для торговых и выставочных целей",
     image: media,
     linkRouter: "/",

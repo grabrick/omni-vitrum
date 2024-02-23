@@ -17,7 +17,13 @@ const MediaPlayer: FC<TProps> = ({ src, defaultVolume }) => {
 
   return (
     <div className={m.overLayer}>
-      <video className={m.videoPlayer} ref={videoRef} src={src} controls />
+      <video 
+        className={m.videoPlayer} 
+        ref={videoRef} 
+        src={src} 
+        controls
+        controlsList="nodownload"
+      />
     </div>
   );
 };

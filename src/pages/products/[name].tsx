@@ -1,22 +1,36 @@
 import Head from "next/head";
 import Layout from "@/components/Layout/Layout";
-import { useRouter } from "next/router";
 import Products from "@/components/UI/Products/Products";
-import { productData } from "@/components/UI/Products/data/productsMap";
+import { GetServerSideProps } from "next";
+import { ProductService } from "@/services/products.service";
 
-export default function ProductsPage() {
-  const path = useRouter();
-  const findCurrentProduct: any = productData.find(items => items.type === path.query.name)
-
+export default function ProductsPage({ product }: any) {
   return (
     <>
       <Head>
-        <title>{findCurrentProduct?.routeTitle}</title>
+        <title>{product?.routeTitle}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Products query={findCurrentProduct} />
+        <Products query={product} />
       </Layout>
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const name: any = context.params?.name;
+  let product
+  const fetchedProduct = await ProductService.fetchProducts(name);
+  product = fetchedProduct
+
+  if (!fetchedProduct) {
+    product = null;
+  }
+
+  return { 
+    props: {
+      product: product
+    } 
+  };
+};

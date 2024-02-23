@@ -62,7 +62,6 @@ const VideoPlayer = () => {
           ref={backgroundVideoRef}
           src={Video}
           // controls
-          preload="metadata"
           autoPlay
           loop
           muted
@@ -74,7 +73,6 @@ const VideoPlayer = () => {
           ref={mainVideoRef}
           src={Video}
           // controls
-          preload="metadata"
           autoPlay
           loop
           muted

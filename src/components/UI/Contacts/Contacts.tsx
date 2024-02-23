@@ -7,13 +7,20 @@ import { contactData } from "./data/contactMap";
 import m from "./Contacts.module.scss";
 import { motion } from "framer-motion";
 import { topToBottom } from "@/assets/animation/animation";
+import { useState } from "react";
 
 const Contacts = () => {
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const defaultState = {
     center: [55.888023, 37.63281],
     zoom: 15,
   };
   const addressCoordinates = [55.888023, 37.63281];
+
+  const handleMapLoad = () => {
+    console.log("Карта загружена");
+    setIsLoaded(true);
+  };
 
   return (
     <>
@@ -21,11 +28,12 @@ const Contacts = () => {
       <Template>
         <div className={m.content}>
           <div className={m.mapWrap}>
-            <YMaps>
+            <YMaps query={{ lang: "ru_RU" }}>
               <Map
                 defaultState={defaultState}
+                onLoad={handleMapLoad}
                 style={{
-                  width: "95vw",
+                  width: "97vmax",
                   maxWidth: "1275px",
                   height: "500px",
                 }}
@@ -35,6 +43,7 @@ const Contacts = () => {
               </Map>
             </YMaps>
           </div>
+
           <motion.div
             className={m.contactsWrapper}
             initial="hidden"

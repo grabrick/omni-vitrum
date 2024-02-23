@@ -45,8 +45,8 @@ const productsData = [
       {
         id: 7,
         title: "Универсальная форма для моллирования стекла",
-        route: "/universal-mold-for-glass-milling",
-        type: 'universal-mold-for-glass-millin'
+        route: "/products/universal-mold-for-glass-milling",
+        type: 'universal-mold-for-glass-milling'
       },
     ],
   },
