@@ -1,0 +1,190 @@
+@import '../../../styles/const.scss';
+
+.content {
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 648px) {
+    padding: 30px;
+  }
+
+  .calculator {
+    background-color: $BlueLight2;
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .calcTitle {
+      color: $White;
+      text-align: center;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .props {
+        display: flex;
+        flex-direction: column;
+        background-color: $BlueDark2;
+        border-left: 2px solid $Border;
+        border-right: 2px solid $Border;
+        border-radius: 15px;
+        padding: 10px;
+        gap: 20px;
+        box-shadow: 0px 10px 20px $ShadowColor;
+
+        .selectorTitle {
+          color: $White;
+          padding-bottom: 10px;
+          border-bottom: 2px solid $Border;
+        }
+
+        .inputWrapper {
+          display: flex;
+          // flex-direction: column;
+          gap: 20px;
+          padding-bottom: 10px;
+
+          @media screen and (max-width: 573px) {
+            flex-direction: column;
+          }
+
+          .label {
+            font-size: 14px;
+            color: $White;
+          }
+
+          .inputContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        
+            .inputEl {
+              position: relative;
+              padding-bottom: 10px;
+        
+              .input {
+                border: none;
+                background-color: $Border;
+                color: $White;
+                outline: none;
+                font-size: 18px;
+                padding: 9px 5px;
+                border-radius: 10px;
+        
+                &::placeholder {
+                  color: $White;
+                }
+              }
+        
+              .error {
+                font-size: 15px;
+                position: absolute;
+                top: 45px;
+                left: 0;
+                color: rgb(196, 60, 60);
+              }
+            }
+          }
+
+          .wrapp {
+            position: relative;
+            padding-bottom: 10px;
+            max-width: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+      
+            .selector {
+              cursor: pointer;
+              width: 200px;
+              color: $White;
+              background-color: $Border;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              padding: 10px 15px;
+              border-radius: 10px;
+            }
+      
+            .activeSelector {
+              cursor: pointer;
+              width: 200px;
+              color: $White;
+              background-color: $Border;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              padding: 10px 15px;
+              border-radius: 10px 10px 0 0;
+              // border-bottom: 2px solid black;
+            }
+      
+            .selected {
+              width: 200px;
+              display: flex;
+              flex-direction: column;
+              gap: 15px;
+              padding: 13px;
+              background-color: $Border;
+              border-radius: 0 0 10px 10px;
+              position: absolute;
+              z-index: 1;
+              top: 58px;
+      
+              .item {
+                cursor: pointer;
+      
+                &:hover {
+                  color: $White;
+                  transition: ease-in .2s;
+                }
+              }
+            }
+          }
+
+          .otherInputs {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+          }
+        }
+      }
+    }
+
+    .result {
+      border-top: 2px solid $Border;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .resultElement {
+        background-color: $BlueDark2;
+        border-left: 2px solid $Border;
+        border-right: 2px solid $Border;
+        box-shadow: 0px 10px 20px $ShadowColor;
+        padding: 10px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .resultTitle {
+          color: $White;
+        }
+
+        .resultValue {
+          color: $White;
+        }
+      }
+    }
+  }
+}

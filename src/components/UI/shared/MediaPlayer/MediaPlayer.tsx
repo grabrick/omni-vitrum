@@ -1,12 +1,13 @@
 import m from "./MediaPlayer.module.scss";
-import { FC, useEffect, useRef } from "react";
+import { CSSProperties, FC, useEffect, useRef } from "react";
 
 type TProps = {
   src: string;
+  styles?: CSSProperties;
   defaultVolume?: number;
 };
 
-const MediaPlayer: FC<TProps> = ({ src, defaultVolume }) => {
+const MediaPlayer: FC<TProps> = ({ src, styles, defaultVolume }) => {
   const videoRef = useRef<HTMLVideoElement | any>(null);
 
   useEffect(() => {
@@ -18,7 +19,8 @@ const MediaPlayer: FC<TProps> = ({ src, defaultVolume }) => {
   return (
     <div className={m.overLayer}>
       <video 
-        className={m.videoPlayer} 
+        className={m.videoPlayer}
+        style={styles} 
         ref={videoRef} 
         src={src} 
         controls

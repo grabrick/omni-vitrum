@@ -9,6 +9,16 @@
   flex-direction: column;
   gap: 40px;
 
+  .mediaWrapper {
+    display: flex;
+    gap: 40px;
+
+    @media screen and (max-width: 900px) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
   @media screen and (max-width: 425px) {
     padding: 30px 10px;
   }

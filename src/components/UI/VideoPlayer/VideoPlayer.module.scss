@@ -1,155 +1,155 @@
 @import '../../../styles/const.scss';
 
-
-.other {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 20px;
-  width: 110vmin;
-  // height: 34vmin;
-  height: 38vmin;
-
-  @media (max-width: 1170px) {
-    width: 87vmin;
-    height: 34vmin;
+.wrapper {
+  @media screen and (max-width: 839px) {
+    padding: 20px;
   }
 
-  @media (max-width: 946px) {
-    margin-top: 40px;
-  }
-
-  @media (max-width: 845px) {
-   margin-top: 40px;
-  }
-
-  @media (max-width: 775px) {
-    width: 87vmin;
-  }
-
-  @media (max-width: 750px) {
-    margin-top: 100px;
-  }
-
-  @media (max-width: 640px) {
-    margin-top: 100px;
-  }
-
-  @media (max-width: 575px) {
-    margin-top: 120px;
-    padding: 0px 10px;
+  .other {
+    max-width: 1080px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-
-  @media (max-width: 425px) {
-    margin-top: 150px;
-  }
-
-  @media screen and (max-width: 320px) {
-    margin-top: 170px;
-  }
-
-  .desc {
-    font-size: 20px;
-    letter-spacing: 2px;
-    font-weight: 400;
-
+    justify-content: flex-end;
+    gap: 20px;
+    width: 110vmin;
+    // height: 34vmin;
+    height: 38vmin;
+  
+    @media (max-width: 1170px) {
+      width: 87vmin;
+      height: 34vmin;
+    }
+  
+    @media (max-width: 946px) {
+      margin-top: 40px;
+    }
+  
+    @media screen and (max-width: 839px) {
+      margin-top: 20px;
+      height: auto;
+    }
+  
+    @media (max-width: 775px) {
+      width: 87vmin;
+    }
+  
     @media (max-width: 575px) {
-      font-size: 15px;
-      text-align: center;
+      padding: 0px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .desc {
+      font-size: 20px;
+      letter-spacing: 2px;
+      font-weight: 400;
+  
+      @media (max-width: 575px) {
+        font-size: 15px;
+        text-align: center;
+      }
     }
   }
-}
-
-.mainScreen {
-  position: absolute;
-  width: 110vmin;
-  height: 45vmin;
-  z-index: 5;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media (min-width: 1300px) {
-    max-width: 1080px;
-  }
-
-  @media (max-width: 1300px) {
-    max-width: 1080px;
-  }
-
-  @media (max-width: 1170px) {
-    width: 87vmin;
-  }
-
-  @media (max-width: 775px) {
-    width: 87vmin;
-  }
-
-  .backgroundPlayer {
-    border-radius: 20px;
-    background-color: #252525;
-    z-index: 2;
-    width: 100%;
-    height: auto;
-  }
-}
-
-.overlay {
-  height: 350px;
-  overflow: hidden;
-  background-color: #252525;
-  border-radius: 20px 20px 0 0;
-
-  @media (max-width: 900px) {
-    height: 250px;
-  }
-
-  @media (max-width: 640px) {
-    height: 150px;
-  }
-
-  @media screen and (max-width: 320px) {
-    display: none;
-  }
-
-  .backgroundBlur {
-    border-radius: 20px 20px 0 0;
-    width: 100%;
-    max-width: 1275px;
-    height: 350px;
-    background-color: #d9d9d92a;
-    backdrop-filter: blur(10px);
+  
+  .mainScreen {
     position: absolute;
-
+    width: 110vmin;
+    height: 45vmin;
+    z-index: 5;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    @media (min-width: 1300px) {
+      max-width: 1080px;
+    }
+  
+    @media (max-width: 1300px) {
+      max-width: 1080px;
+    }
+  
+    @media (max-width: 1170px) {
+      width: 87vmin;
+    }
+  
+    @media screen and (max-width: 839px) {
+      transform: none;
+      position: relative;
+      left: 0;
+      height: auto;
+    }
+  
+    @media (max-width: 775px) {
+      width: 87vmin;
+    }
+  
+    .backgroundPlayer {
+      border-radius: 20px;
+      background-color: #252525;
+      z-index: 2;
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  .overlay {
+    height: 350px;
+    overflow: hidden;
+    background-color: #252525;
+    border-radius: 20px 20px 0 0;
+  
     @media (max-width: 900px) {
       height: 250px;
+    }
+  
+    @media screen and (max-width: 839px) {
+      display: none;
     }
   
     @media (max-width: 640px) {
       height: 150px;
     }
+  
+    @media screen and (max-width: 320px) {
+      display: none;
+    }
+  
+    .backgroundBlur {
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      max-width: 1275px;
+      height: 350px;
+      background-color: #d9d9d92a;
+      backdrop-filter: blur(10px);
+      position: absolute;
+  
+      @media (max-width: 900px) {
+        height: 250px;
+      }
+    
+      @media (max-width: 640px) {
+        height: 150px;
+      }
+    }
+  
+    .backgroundPlayer {
+      // height: 350px;
+      width: 100%;
+      max-width: 1275px;
+      border-radius: 20px 20px 0 0;
+    }
   }
-
-  .backgroundPlayer {
-    // height: 350px;
+  
+  .mainPlayer {
     width: 100%;
-    max-width: 1275px;
-    border-radius: 20px 20px 0 0;
+    height: 300px;
+    position: absolute;
+    top: 350px;
+    z-index: 1;
+    border-radius: 0 0 20px 20px;
   }
-}
-
-.mainPlayer {
-  width: 100%;
-  height: 300px;
-  position: absolute;
-  top: 350px;
-  z-index: 1;
-  border-radius: 0 0 20px 20px;
 }

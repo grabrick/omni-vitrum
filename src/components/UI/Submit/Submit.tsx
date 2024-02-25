@@ -8,15 +8,18 @@ import Button from "../shared/Button/Button";
 import ButtonWrapper from "./ButtonWrapper/ButtonWrapper";
 import { motion } from "framer-motion";
 import { bottomToTop } from "@/assets/animation/animation";
+import { useWindowSize } from "@/helpers/useWindowSize";
+import SlicedButtonWrapper from "./SlicedButtonWrapper/SlicedButtonWrapper";
 
 const Submit = () => {
+  const { width } = useWindowSize()
   const linkData = [
     {
       id: 0,
       text: "WhatsApp",
       icons: Message,
       isRouteBtn: false,
-      content: "/",
+      content: "+79160161365",
     },
     {
       id: 1,
@@ -44,11 +47,12 @@ const Submit = () => {
       variants={bottomToTop}
     >
       <div className={m.textWrapper}>
-        <h1 className={m.title}>Нужно больше информации о продукции?</h1>
-        <label className={m.label}>Переходите в наш блог</label>
+        <h1 className={m.title}>Понравилась наша продукция</h1>
+        <label className={m.label}>Свяжитесь с нами напрямую</label>
       </div>
       <Template>
-        <ButtonWrapper linkData={linkData} />
+        {(width && width > 768) && <ButtonWrapper linkData={linkData} />}
+        {(width && width < 769) && <SlicedButtonWrapper />}
       </Template>
     </motion.div>
   );

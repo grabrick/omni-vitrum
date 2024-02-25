@@ -1,0 +1,32 @@
+@import '../../../../styles/const.scss';
+
+.wrapper {
+  position: fixed;
+  top: 110px;
+  right: 10px;
+  z-index: 10;
+
+  @media screen and (max-width: 839px) {
+    display: none;
+  }
+
+  .button {
+    background-color: $BlueDark2;
+    padding: 15px;
+    color: $White;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    border-top: 3px solid $Border;
+    box-shadow: 0px 10px 10px $ShadowColor;
+  
+    &:hover {
+      transform: scale(1.04);
+      transition: ease-in .2s;
+    }
+  }
+}
+

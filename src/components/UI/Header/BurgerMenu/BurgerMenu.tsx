@@ -1,8 +1,6 @@
-import Image from "next/image";
 import Logo from "../../shared/Logo/Logo";
 import m from "./BurgerMenu.module.scss";
 import Link from "next/link";
-import ArrowDown from "@/assets/icons/ArrowDown.svg";
 
 const BurgerMenu = ({ setIsActive, navRouters, pathname }: any) => {
   return (
@@ -35,6 +33,7 @@ const BurgerMenu = ({ setIsActive, navRouters, pathname }: any) => {
               )}
             </div>
           ))}
+          <Link href="/calculate" className={pathname === "/calculate" ? m.wrappActive : m.link}>Калькулятор</Link>
         </div>
       </div>
     </div>
