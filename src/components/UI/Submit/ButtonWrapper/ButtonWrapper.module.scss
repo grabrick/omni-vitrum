@@ -15,6 +15,40 @@
     justify-content: space-between;
     padding-right: 10px;
 
+    .el {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px;
+      width: fit-content;
+      background-color: $BlueLight2;
+      border-radius: 16px;
+      font-size: 18px;
+      border-top: 3px solid #88A2FF;
+      border-bottom: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      box-shadow: 0 10px 20px $ButtonShadowColor;
+      color: $White;
+      gap: 10px;
+
+      .text {
+        color: #fff;
+        font-weight: 400;
+      }
+
+      &:hover {
+        transform: scale(1.06);
+        background-color: $BlueLight2;
+        transition: ease-in .3s;
+      }
+    
+      &:active {
+        background-color: $BlueLight3;
+        transition: ease-in .1s;
+      }
+    }
+
     @media screen and (max-width: 450px) {
       gap: 20px;
     }

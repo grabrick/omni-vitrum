@@ -18,7 +18,7 @@ const Submit = () => {
       id: 0,
       text: "WhatsApp",
       icons: Message,
-      isRouteBtn: false,
+      isRouteBtn: true,
       content: "+79160161365",
     },
     {
@@ -26,7 +26,7 @@ const Submit = () => {
       text: "Телефон",
       icons: Call,
       isRouteBtn: false,
-      content: "+7778937534",
+      content: "+79160161365",
     },
     {
       id: 2,
@@ -52,7 +52,7 @@ const Submit = () => {
       </div>
       <Template>
         {(width && width > 768) && <ButtonWrapper linkData={linkData} />}
-        {(width && width < 769) && <SlicedButtonWrapper />}
+        {/* {(width && width < 769) && <SlicedButtonWrapper />} */}
       </Template>
     </motion.div>
   );

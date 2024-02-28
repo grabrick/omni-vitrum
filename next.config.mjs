@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['45.9.40.240'],
+    domains: ['45.9.40.240', 'bentglass.ru'],
   },
   webpack(config, options) {
     config.module.rules.push({

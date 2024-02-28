@@ -1,5 +1,6 @@
 import CalculateBtn from "@/components/UI/shared/CalculateBtn/CalculateBtn";
 import "@/styles/globals.scss";
+import "@/styles/fonts.scss"
 import type { AppProps } from "next/app";
 import { Toaster } from "react-hot-toast";
 

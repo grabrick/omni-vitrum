@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import m from './ButtonWrapper.module.scss';
-import { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Button from '../../shared/Button/Button';
+import Link from 'next/link';
 
 type TButton = {
   id: number,
@@ -20,7 +21,10 @@ const ButtonWrapper:FC<TProps> = ({ linkData }) => {
     <div className={m.content}>
       <div className={m.upContent}>
         {linkData.slice(0, 1).map((items: TButton) => (
-          <Button key={items.id} text={items.text} icons={items.icons} isRouteBtn={items.isRouteBtn} content={items.content} />
+          <div className={m.el}>
+            <Link href={'https://wa.me/78002015467'} target="_blank" className={m.text}>{items.text}</Link>
+            <Image src={items.icons} alt="" />
+          </div>
         ))}
         <div className={m.border} />
         {linkData.slice(1, 2).map((items: TButton) => (
