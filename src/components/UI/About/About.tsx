@@ -14,7 +14,7 @@ const About = () => {
       <Section title="О компании" />
       <Template>
         <div className={m.content}>
-          <MediaPlayer src={Vid} defaultVolume={0.5} />
+          <MediaPlayer src={"https://bentglass.ru/public/aboutVideo/aboutVideo.mp4"} defaultVolume={0.5} />
           <div className={m.wrapper}>
             <span className={m.desc}>
               Наш офис находится прямо на производстве, поэтому вы всегда можете

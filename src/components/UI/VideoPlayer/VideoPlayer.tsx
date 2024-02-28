@@ -63,7 +63,7 @@ const VideoPlayer = () => {
             <video
               className={m.backgroundPlayer}
               ref={backgroundVideoRef}
-              src={Video}
+              src={"https://bentglass.ru/public/aboutVideo/aboutVideo.mp4"}
               autoPlay
               preload="auto"
               loop
@@ -76,7 +76,7 @@ const VideoPlayer = () => {
             <video
               className={m.backgroundPlayer}
               ref={mainVideoRef}
-              src={Video}
+              src={"https://bentglass.ru/public/aboutVideo/aboutVideo.mp4"}
               autoPlay
               preload="auto"
               loop
@@ -86,7 +86,7 @@ const VideoPlayer = () => {
           {width && width < 839 && (
             <video
               className={m.backgroundPlayer}
-              src={Video}
+              src={"https://bentglass.ru/public/aboutVideo/aboutVideo.mp4"}
               controls
               muted
             />
