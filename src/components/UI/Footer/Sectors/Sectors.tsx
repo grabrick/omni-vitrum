@@ -2,6 +2,7 @@ import Image from "next/image";
 import WhatsApp from "@/assets/icons/whatsapp.svg";
 import Telega from "@/assets/icons/Telegram.svg";
 import m from "./Sectors.module.scss";
+import Link from "next/link";
 
 const Sectors = ({ sector }: any) => {
   return (
@@ -13,11 +14,11 @@ const Sectors = ({ sector }: any) => {
               <div className={m.wrapper}>
                 <h3 className={m.title}>{data.title}</h3>
                 <div className={m.sector}>
-                {data.selectors.map((selectorData: any) => (
-                  <p className={m.sectorText} key={selectorData.id}>
-                    {selectorData.text}
-                  </p>
-                ))}
+                  {data.selectors.map((selectorData: any) => (
+                    <p className={m.sectorText} key={selectorData.id}>
+                      {selectorData.text}
+                    </p>
+                  ))}
                 </div>
               </div>
             )}
@@ -25,12 +26,26 @@ const Sectors = ({ sector }: any) => {
               <div className={m.wrapper}>
                 <h3 className={m.title}>{data.title}</h3>
                 <div className={m.sector}>
-                {data.selectors.map((selectorData: any) => (
-                  <div className={m.sectorSocial} key={selectorData.id}>
-                    <Image src={selectorData.text === "WhatsApp" ? WhatsApp : Telega} alt="" />
-                    <p className={m.text}>{selectorData.text}</p>
-                  </div>
-                ))}
+                  {data.selectors.map((selectorData: any) => (
+                    <Link
+                      href={
+                        selectorData.text === "WhatsApp"
+                          ? "https://wa.me/78002015467"
+                          : "https://t.me/gnutoe_steklo"
+                      }
+                      target="_blank"
+                      className={m.sectorSocial}
+                      key={selectorData.id}
+                    >
+                      <Image
+                        src={
+                          selectorData.text === "WhatsApp" ? WhatsApp : Telega
+                        }
+                        alt=""
+                      />
+                      <p className={m.text}>{selectorData.text}</p>
+                    </Link>
+                  ))}
                 </div>
               </div>
             )}

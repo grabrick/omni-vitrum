@@ -51,7 +51,8 @@ const Submit = () => {
         <label className={m.label}>Свяжитесь с нами напрямую</label>
       </div>
       <Template>
-        {(width && width > 768) && <ButtonWrapper linkData={linkData} />}
+        {/* {(width && width > 768) && <ButtonWrapper linkData={linkData} />} */}
+        <ButtonWrapper linkData={linkData} />
         {/* {(width && width < 769) && <SlicedButtonWrapper />} */}
       </Template>
     </motion.div>

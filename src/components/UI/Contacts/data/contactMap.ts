@@ -1,5 +1,6 @@
 import Whatsapp from "@/assets/icons/whatsapp.svg";
 import Inst from "@/assets/icons/insta.svg";
+import Telega from "@/assets/icons/Telegram.svg";
 
 const contactData = [
   {
@@ -21,8 +22,8 @@ const contactData = [
     id: 2,
     title: "Социальные сети",
     content: [
-      { id: 0, text: "WhatsApp", img: Whatsapp, activeRoute: "" },
-      { id: 1, text: "Instagram", img: Inst, activeRoute: "" },
+      { id: 0, text: "WhatsApp", img: Whatsapp, activeRoute: null },
+      { id: 1, text: "Telegram", img: Telega, activeRoute: null },
     ],
   },
 ];

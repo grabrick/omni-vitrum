@@ -8,6 +8,7 @@ import m from "./Contacts.module.scss";
 import { motion } from "framer-motion";
 import { topToBottom } from "@/assets/animation/animation";
 import { useState } from "react";
+import Link from "next/link";
 
 const Contacts = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -67,17 +68,39 @@ const Contacts = () => {
                   <h4 className={m.sectionTitle}>{items.title}</h4>
                   <ul className={m.element}>
                     {items.content.map((el) => (
-                      <li
-                        className={m.listItem}
-                        style={{
-                          cursor: el.activeRoute !== null ? "pointer" : "",
-                        }}
-                        onClick={() => ""}
-                        key={el.id}
-                      >
-                        {el.img !== null && <Image src={el.img} alt="" />}
-                        <span className={m.text}>{el.text}</span>
-                      </li>
+                      <>
+                        {items.title === "Социальные сети" ? (
+                          <Link
+                            href={
+                              el.text === "WhatsApp"
+                                ? "https://wa.me/78002015467"
+                                : "https://t.me/gnutoe_steklo"
+                            }
+                            target="_blank"
+                            className={m.listItem}
+                            style={{
+                              cursor: el.activeRoute !== null ? "pointer" : "",
+                            }}
+                            onClick={() => ""}
+                            key={el.id}
+                          >
+                            {el.img !== null && <Image src={el.img} alt="" />}
+                            <span className={m.text}>{el.text}</span>
+                          </Link>
+                        ) : (
+                          <li
+                            className={m.listItem}
+                            style={{
+                              cursor: el.activeRoute !== null ? "pointer" : "",
+                            }}
+                            onClick={() => ""}
+                            key={el.id}
+                          >
+                            {el.img !== null && <Image src={el.img} alt="" />}
+                            <span className={m.text}>{el.text}</span>
+                          </li>
+                        )}
+                      </>
                     ))}
                   </ul>
                 </motion.div>
