@@ -9,7 +9,7 @@ const CalculateBtn = () => {
   const route = useRouter();
   return (
     <>
-      {route.pathname !== "/calculate" && (
+      {(route.pathname !== "/calculate" && route.pathname !== '/404') && (
         <motion.div
           className={m.wrapper}
           initial="hidden"

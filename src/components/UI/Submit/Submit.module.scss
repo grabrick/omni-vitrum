@@ -6,6 +6,10 @@
   align-items: center;
   gap: 50px;
 
+  @media screen and (max-width: 460px) {
+    gap: 25px;
+  }
+
   .textWrapper {
     display: flex;
     flex-direction: column;
@@ -21,8 +25,12 @@
         font-size: 25px;
       }
 
-      @media screen and (max-width: 450px) {
+      @media screen and (max-width: 460px) {
         font-size: 20px;
+      }
+
+      @media screen and (max-width: 450px) {
+        font-size: 19px;
       }
     }
 

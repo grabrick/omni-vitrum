@@ -35,7 +35,7 @@ const Cards: FC<TCard> = ({ cards }) => {
               variants={LeftToRight}
             >
               <div className={m.imageWrapper}>
-                <Image className={m.img} src={items.image} alt="" />
+                <Image className={m.img} width={507} height={331} src={items.image} alt="" />
               </div>
               <div className={m.textWrapper}>
                 <div className={m.textHeader}>
@@ -69,7 +69,7 @@ const Cards: FC<TCard> = ({ cards }) => {
                 </Link>
               </div>
               <div className={m.imageWrapper}>
-                <Image className={m.img} src={items.image} alt="" />
+                <Image className={m.img} width={507} height={331} src={items.image} alt="" />
               </div>
             </motion.div>
           )}

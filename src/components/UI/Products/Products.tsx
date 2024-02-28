@@ -12,7 +12,7 @@ import { topToBottom } from "@/assets/animation/animation";
 import ErrorWrapper from "../ErrorWrapper/ErrorWrapper";
 import { TProps } from "./type/type";
 
-const Products: FC<TProps> = ({ query }) => {
+const Products: FC<TProps> = ({ query }) => {  
   return (
     <>
       {query && (
@@ -20,30 +20,18 @@ const Products: FC<TProps> = ({ query }) => {
           <Section pathname={query.type} title={query?.routeTitle} />
           <Template key={query.type}>
             <div className={m.conteiner}>
-              <div className={m.mediaWrapper}>
-                <MediaPlayer src={Vid} styles={{ height: '450px' }} defaultVolume={0.5} />
+              <motion.div 
+                className={m.mediaWrapper}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={2}
+                variants={topToBottom}
+              >
+                <MediaPlayer src={query.content.video} styles={{ height: '450px' }} defaultVolume={0.5} />
                 <TopDownSlider findCurrentProduct={query.content.images} />
-              </div>
+              </motion.div>
               <div className={m.wrapper}>
-                {/* <motion.div
-                  className={m.slider}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  custom={2}
-                  variants={topToBottom}
-                >
-                  <ImageSlider images={query.content.images} />
-                </motion.div> */}
-                {/* <motion.div
-                  className={m.topDownSlider}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  custom={2}
-                  variants={topToBottom}
-                >
-                </motion.div> */}
                 <motion.div className={m.textWrapper}>
                   {query.content.texts.map((el) => (
                     <div className={m.wrapp} key={el.id}>

@@ -3,6 +3,9 @@
 .wrapper {
   @media screen and (max-width: 839px) {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .other {
@@ -32,9 +35,6 @@
   
     @media (max-width: 775px) {
       width: 87vmin;
-    }
-  
-    @media (max-width: 575px) {
       padding: 0px 10px;
       display: flex;
       flex-direction: column;
@@ -45,6 +45,11 @@
       font-size: 20px;
       letter-spacing: 2px;
       font-weight: 400;
+
+      @media (max-width: 775px) {
+        font-size: 15px;
+        text-align: center;
+      }
   
       @media (max-width: 575px) {
         font-size: 15px;

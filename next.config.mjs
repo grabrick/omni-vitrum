@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ['45.9.40.240'],
+  },
   webpack(config, options) {
     config.module.rules.push({
       test: /\.(mp4|webm|ogg|swf|ogv)$/,

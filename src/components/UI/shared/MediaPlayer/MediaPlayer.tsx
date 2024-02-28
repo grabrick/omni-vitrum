@@ -24,6 +24,7 @@ const MediaPlayer: FC<TProps> = ({ src, styles, defaultVolume }) => {
         ref={videoRef} 
         src={src} 
         controls
+        muted
         controlsList="nodownload"
       />
     </div>

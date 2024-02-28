@@ -13,13 +13,13 @@ const SlicedButtonWrapper = () => {
           <Link href={'https://wa.me/78002015467'} target="_blank" className={m.text}>Whatsapp</Link>
           <Image src={Message} alt="" />
         </div>
-        <div className={m.border} />
+        {/* <div className={m.border} /> */}
         <div className={m.el}>
           <span className={m.text}>+7778937534</span>
           <Image src={Call} alt="" />
         </div>
       </div>
-      <span className={m.and}>Или</span>
+      {/* <span className={m.and}>Или</span> */}
       <div className={m.downContent}>
         <div className={m.el}>
           <span className={m.text}>zerkalka2016@yandex.ru</span>

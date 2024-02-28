@@ -24,6 +24,7 @@ type TData = {
   type: string,
   routeTitle: string,
   content: {
+    video: string,
     images: TImage[],
     texts: TText[]
   }

@@ -52,7 +52,7 @@ const Blog = () => {
               >
                 <div className={m.textWrapper}>
                   <p className={m.desc}>{items.texts}</p>
-                  <Link href={items.routeLink} className={m.button}>Подробнее...</Link>
+                  {/* <Link href={items.routeLink} className={m.button}>Подробнее...</Link> */}
                 </div>
                 <div className={m.imageWrapper} style={{ justifyContent: items.images.length > 2 ? "center" : "" }}>
                   {items.images.map((el) => (
@@ -65,7 +65,7 @@ const Blog = () => {
                       custom={el.animatedId * 2}
                       variants={topToBottom}
                     >
-                      <Image className={m.img} src={el.image} alt="" />
+                      <Image className={m.img} height={268} width={404} src={el.image} alt="" />
                     </motion.div>
                   ))}
                 </div>
