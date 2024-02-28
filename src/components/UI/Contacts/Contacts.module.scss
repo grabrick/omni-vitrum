@@ -10,23 +10,14 @@
   .mapWrap {
     border-radius: 20px 20px 0 0;
     overflow: hidden;
-    width: 76vw;
+    width: 100%;
     max-width: 1275px;
     height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    @media screen and (max-width: 1675px) {
-      width: 97vmax;
-    }
-
     @media screen and (max-width: 600px) {
       height: 250px;
-    }
-
-    @media screen and (max-width: 815px) {
-      width: 94vmin;
     }
   }
 

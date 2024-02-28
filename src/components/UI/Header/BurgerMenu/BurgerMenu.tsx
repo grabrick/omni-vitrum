@@ -1,11 +1,28 @@
 import Logo from "../../shared/Logo/Logo";
 import m from "./BurgerMenu.module.scss";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { RightToLeft, StepOutShadows } from "@/assets/animation/animation";
 
 const BurgerMenu = ({ setIsActive, navRouters, pathname }: any) => {
   return (
-    <div className={m.overlay} onClick={() => setIsActive(false)}>
-      <div className={m.modal} onClick={(e) => e.stopPropagation()}>
+    <motion.div 
+      className={m.overlay} 
+      onClick={() => setIsActive(false)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={StepOutShadows}
+    >
+      <motion.div 
+        className={m.modal} 
+        onClick={(e) => e.stopPropagation()}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        custom={1}
+        variants={RightToLeft}
+      >
         <div className={m.head}>
           <Logo />
         </div>
@@ -35,8 +52,8 @@ const BurgerMenu = ({ setIsActive, navRouters, pathname }: any) => {
           ))}
           <Link href="/calculate" className={pathname === "/calculate" ? m.wrappActive : m.link}>Калькулятор</Link>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

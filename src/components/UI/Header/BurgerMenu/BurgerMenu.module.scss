@@ -26,7 +26,6 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
     gap: 40px;
     align-items: center;
 
@@ -53,14 +52,12 @@
 
         @media (hover: hover) {
           &:hover {
-            // font-weight: 600;
             transition: ease-in .2s;
           }
         }
 
         @media (hover: none) {
           &:active {
-            // font-weight: 600;
             transition: ease-in .2s;
           }
         }
@@ -92,14 +89,12 @@
 
         @media (hover: hover) {
           &:hover {
-            // font-weight: 600;
             transition: ease-in .2s;
           }
         }
 
         @media (hover: none) {
           &:active {
-            // font-weight: 600;
             transition: ease-in .2s;
           }
         }

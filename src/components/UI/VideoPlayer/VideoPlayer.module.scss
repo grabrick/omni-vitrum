@@ -16,7 +16,6 @@
     justify-content: flex-end;
     gap: 20px;
     width: 110vmin;
-    // height: 34vmin;
     height: 38vmin;
   
     @media (max-width: 1170px) {
@@ -32,9 +31,13 @@
       margin-top: 20px;
       height: auto;
     }
+
+    @media (max-width: 838px) {
+      width: 100%;
+    }
   
     @media (max-width: 775px) {
-      width: 87vmin;
+      // width: 87vmin;
       padding: 0px 10px;
       display: flex;
       flex-direction: column;
@@ -88,8 +91,8 @@
       height: auto;
     }
   
-    @media (max-width: 775px) {
-      width: 87vmin;
+    @media (max-width: 838px) {
+      width: 100%;
     }
   
     .backgroundPlayer {
