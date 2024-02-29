@@ -125,6 +125,7 @@ const VideoPlayer = () => {
             <video
               className={m.backgroundPlayer}
               src={"https://bentglass.ru/public/aboutVideo/aboutVideo.mp4"}
+              poster="../../../assets/images/poster.jpg"
               controls
               muted
             />
