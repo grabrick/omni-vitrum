@@ -90,6 +90,8 @@ const useCalc = () => {
     // Расчет прогиба, если он не задан и известны радиус и хорда
     if (chord === 0 && radius > 0 && deflection > 0) {
       chord = 2 * Math.sqrt(radius * radius - (radius - deflection) * (radius - deflection));
+    } else if (radius === 0 && deflection > 0 && chord > 0) {
+      radius = deflection / 2 + (chord * chord) / (8 * deflection);
     }
 
     const newCorner = radius > 0 && chord > 0 ? (2 * Math.asin(chord / (2 * radius)) * 180) / pi : 0;
