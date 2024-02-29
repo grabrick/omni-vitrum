@@ -16,7 +16,7 @@ const Calculate = () => {
   const [input1, setInput1] = useState({ id: 0, value: "" });
   const [input2, setInput2] = useState({ id: 0, value: "" });
   const [selector1, setSelector1] = useState("Радиус");
-  const [selector2, setSelector2] = useState("Радиус");
+  const [selector2, setSelector2] = useState("Хорда");
   const [selector3, setSelector3] = useState("Наружный");
   const [selector4, setSelector4] = useState(2);
 
@@ -71,8 +71,8 @@ const Calculate = () => {
                   <div
                     className={m.wrapp}
                     onClick={() => setIsOpen1(!isOpen1)}
-                    onMouseEnter={() => setIsOpen1(true)}
-                    onMouseLeave={() => setIsOpen1(false)}
+                    // onMouseEnter={() => setIsOpen1(true)}
+                    // onMouseLeave={() => setIsOpen1(false)}
                   >
                     <label className={m.label}>Параметр</label>
                     <span
@@ -154,8 +154,8 @@ const Calculate = () => {
                     <div
                       className={m.wrapp}
                       onClick={() => setIsOpen2(!isOpen2)}
-                      onMouseEnter={() => setIsOpen2(true)}
-                      onMouseLeave={() => setIsOpen2(false)}
+                      // onMouseEnter={() => setIsOpen2(true)}
+                      // onMouseLeave={() => setIsOpen2(false)}
                     >
                       <label className={m.label}>Параметр</label>
                       <span
@@ -226,8 +226,8 @@ const Calculate = () => {
                     <div
                       className={m.wrapp}
                       onClick={() => setIsOpen3(!isOpen3)}
-                      onMouseEnter={() => setIsOpen3(true)}
-                      onMouseLeave={() => setIsOpen3(false)}
+                      // onMouseEnter={() => setIsOpen3(true)}
+                      // onMouseLeave={() => setIsOpen3(false)}
                     >
                       <label className={m.label}>Тип</label>
                       <span
@@ -273,8 +273,8 @@ const Calculate = () => {
                     <div
                       className={m.wrapp}
                       onClick={() => setIsOpen4(!isOpen4)}
-                      onMouseEnter={() => setIsOpen4(true)}
-                      onMouseLeave={() => setIsOpen4(false)}
+                      // onMouseEnter={() => setIsOpen4(true)}
+                      // onMouseLeave={() => setIsOpen4(false)}
                     >
                       <label className={m.label}>Толщина (мм)</label>
                       <span

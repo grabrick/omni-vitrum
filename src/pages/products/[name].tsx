@@ -3,6 +3,7 @@ import Layout from "@/components/Layout/Layout";
 import Products from "@/components/UI/Products/Products";
 import { GetServerSideProps } from "next";
 import { ProductService } from "@/services/products.service";
+import ImagesSlider from "@/components/UI/ImagesSlider/ImagesSlider";
 
 export default function ProductsPage({ product }: any) {
   return (
@@ -13,6 +14,7 @@ export default function ProductsPage({ product }: any) {
       </Head>
       <Layout>
         <Products query={product} />
+        <ImagesSlider />
       </Layout>
     </>
   );

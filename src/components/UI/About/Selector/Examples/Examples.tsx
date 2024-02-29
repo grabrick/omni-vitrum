@@ -44,7 +44,7 @@ const Examples: FC<TProps> = ({
             <div className={m.images}>
               {items.images.map((el) => (
                 <div key={el.id} className={m.imageWrapper}>
-                  <Image src={el.image} alt="" className={m.img} />
+                  <Image src={el.image} width={311} height={200} alt="" className={m.img} />
                 </div>
               ))}
             </div>

@@ -18,9 +18,9 @@ const selectorsData = [
     selectedRoute: [
       { id: 0, title: "Душевая", type: "Shower" },
       { id: 1, title: "Зеркала", type: "Mirrors" },
-      { id: 2, title: "Стеклянные полы", type: "Glassfloors" },
+      { id: 2, title: "Лесницы", type: "Ladders" },
       { id: 3, title: "Витрины", type: "Showcases" },
-      { id: 4, title: "Двери", type: "Doors" },
+      { id: 4, title: "Фурнитура", type: "Furniture" },
       { id: 5, title: "Сферы", type: "Spheres" },
     ],
   },

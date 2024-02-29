@@ -151,9 +151,10 @@
           }
 
           .img {
-            border-radius: 30px;
+            border-radius: 25px;
             width: 311px;
             height: 200px;
+            object-fit: cover;
 
             @media screen and (max-width: 860px) {
               width: 250px;

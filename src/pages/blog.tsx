@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout from "@/components/Layout/Layout";
 import Blog from "@/components/UI/Blog/Blog";
+import ImagesSlider from "@/components/UI/ImagesSlider/ImagesSlider";
 
 export default function BlogPage() {
   return (
@@ -11,6 +12,7 @@ export default function BlogPage() {
       </Head>
       <Layout>
         <Blog />
+        <ImagesSlider />
       </Layout>
     </>
   );

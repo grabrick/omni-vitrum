@@ -1,7 +1,6 @@
+import React, { useEffect, useRef, useState } from "react";
 import m from "./VideoPlayer.module.scss";
-import Video from "@/assets/video/back.webm";
 import Buld from "@/assets/icons/Building.svg";
-import { useEffect, useRef, useState } from "react";
 import Button from "../shared/Button/Button";
 import Template from "../shared/Template/Template";
 import { motion } from "framer-motion";
@@ -12,40 +11,79 @@ const VideoPlayer = () => {
   const backgroundVideoRef = useRef<HTMLVideoElement>(null);
   const mainVideoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [backgroundVideoReady, setBackgroundVideoReady] = useState(false);
+  const [mainVideoReady, setMainVideoReady] = useState(false);
   const { width } = useWindowSize();
 
   const syncVideos = () => {
     const backgroundVideo = backgroundVideoRef.current;
     const mainVideo = mainVideoRef.current;
 
-    if (!backgroundVideo || !mainVideo) return;
+    if (
+      !backgroundVideo ||
+      !mainVideo ||
+      !backgroundVideoReady ||
+      !mainVideoReady
+    )
+      return;
 
     if (Math.abs(backgroundVideo.currentTime - mainVideo.currentTime) > 0.1) {
       mainVideo.currentTime = backgroundVideo.currentTime;
     }
   };
 
+  const handleVideoReady = (videoRef: any) => {
+    if (videoRef === backgroundVideoRef.current) {
+      setBackgroundVideoReady(true);
+    } else if (videoRef === mainVideoRef.current) {
+      setMainVideoReady(true);
+    }
+  };
+
   useEffect(() => {
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
     const backgroundVideo = backgroundVideoRef.current;
     const mainVideo = mainVideoRef.current;
 
+    const handlePlay = () => {
+      setIsPlaying(true);
+      handleVideoReady(backgroundVideo);
+      handleVideoReady(mainVideo);
+    };
+
+    const handlePause = () => setIsPlaying(false);
+
     backgroundVideo?.addEventListener("play", handlePlay);
     backgroundVideo?.addEventListener("pause", handlePause);
+    mainVideo?.addEventListener("play", handlePlay);
+    mainVideo?.addEventListener("pause", handlePause);
+    backgroundVideo?.addEventListener("canplaythrough", () =>
+      handleVideoReady(backgroundVideoRef.current)
+    );
+    mainVideo?.addEventListener("canplaythrough", () =>
+      handleVideoReady(mainVideoRef.current)
+    );
 
-    let intervalId: number | undefined;
+    let intervalId: any;
 
-    if (isPlaying) {
-      intervalId = window.setInterval(syncVideos, 1000);
+    if (isPlaying && backgroundVideoReady && mainVideoReady) {
+      intervalId = setInterval(syncVideos, 1000);
     }
 
     return () => {
       backgroundVideo?.removeEventListener("play", handlePlay);
       backgroundVideo?.removeEventListener("pause", handlePause);
+      mainVideo?.removeEventListener("play", handlePlay);
+      mainVideo?.removeEventListener("pause", handlePause);
+      backgroundVideo?.removeEventListener("canplaythrough", () =>
+        handleVideoReady(backgroundVideoRef.current)
+      );
+      mainVideo?.removeEventListener("canplaythrough", () =>
+        handleVideoReady(mainVideoRef.current)
+      );
+
       if (intervalId) clearInterval(intervalId);
     };
-  }, [isPlaying]);
+  }, [isPlaying, backgroundVideoReady, mainVideoReady]);
 
   return (
     <Template styles={{ position: "relative", paddingBottom: "40px" }}>
