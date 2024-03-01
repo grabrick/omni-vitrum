@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Logo from "../shared/Logo/Logo";
 import m from "./Footer.module.scss";
 import Sectors from "./Sectors/Sectors";
@@ -27,7 +28,10 @@ const Footer = () => {
   return (
     <footer className={m.container}>
       <div className={m.wrapper}>
-        <Logo />
+        <div className={m.wrapp}>
+          <Logo />
+          <span className={m.nameTags}>Дизайн и разработка: <Link className={m.tags} href={"https://rodya.kz"} target="_blank">rodya.kz</Link></span>
+        </div>
         <Sectors sector={contacts} />
       </div>
     </footer>
